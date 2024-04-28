@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import Yosemite from './pictures/Yosemite.jpg';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [city, setCity] = useState('Sacramento')
+    const [weather, setWeather] = useState(null)
+    const [units, setUnits] = useState('metric')
+
+
+    return (
+
+        <div className="App" style={{backgroundImage: `url(${Yosemite})`}}>
+
+            <h1 style={{ color: "white" }}>Weather App</h1>
+
+            <div className="overlay">
+
+
+                <div className="container">
+
+                    <div className="section section_input">
+
+                        <input
+                            type="text"
+                            placeholder="Enter the City"
+
+                        />
+
+                        <button>Search</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    );
 }
 
 export default App;
